@@ -3,12 +3,17 @@ import App from './App'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import store from './store'
+
+/* import muse-ui  */
+import MuseUI from 'muse-ui'
+import 'muse-ui/dist/muse-ui.css'
+import 'muse-ui/dist/theme-carbon.css'
 // import { sync } from 'vuex-router-sync'
 
 // sync(store, router) // done.
 
 /* eslint-disable no-new */
-Vue.use(VueRouter, Vuex)
+Vue.use(VueRouter, Vuex, MuseUI)
 
 /*
  * Route

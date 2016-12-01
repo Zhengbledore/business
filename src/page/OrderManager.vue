@@ -1,6 +1,6 @@
 <template>
   <div>
-    this is login page for choose login way
+    this is OrderManager page
   </div>
 </template>
 <style>

@@ -45,10 +45,17 @@ router.afterEach(route => {
   // ...
 })
 
-new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: {App},
+// new Vue({
+//   el: '#app',
+//   template: '<App/>',
+//   components: {App},
+//   router,
+//   store
+// })
+
+const app = new Vue({
   router,
-  store
+  store,
+  render: h => h(App),
+  el: '#app'
 })

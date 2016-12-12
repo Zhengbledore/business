@@ -4,23 +4,29 @@ import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import store from './store'
 
+/**/
+import axios from 'axios'
+Vue.prototype.$http = axios
+
 /* import muse-ui  */
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-carbon.css'
-// import { sync } from 'vuex-router-sync'
+import { sync } from 'vuex-router-sync'
 
 // sync(store, router) // done.
 
 /* eslint-disable no-new */
-Vue.use(VueRouter, Vuex, MuseUI)
+Vue.use(VueRouter)
+Vue.use(Vuex)
+Vue.use(MuseUI)
 
 /*
  * Route
  */
 import routes from './router/router'
 
-const router = new VueRouter({
+let router = new VueRouter({
   routes,
   mode: 'history', // "hash" | "history" | "abstract"
   scrollBehavior (to, from, savedPosition) {
@@ -44,6 +50,9 @@ router.beforeEach((to, from, next) => {
 router.afterEach(route => {
   // ...
 })
+
+/* use vuex-router-sync */
+sync(store, router)
 
 // new Vue({
 //   el: '#app',

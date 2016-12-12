@@ -6,6 +6,7 @@ import Vuex from 'vuex'
 import * as actions from './actions'
 import * as getters from './getters'
 import demo from './modules/demo'
+import loading from './modules/loading'
 
 Vue.use(Vuex)
 
@@ -15,6 +16,7 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    demo
+    demo,
+    loading
   }
 })

@@ -22,6 +22,7 @@
     width:100%;
     /*position: fixed;*/
     overflow: hidden;
+    /*height: 700px;*/
   }
 </style>
 <script>

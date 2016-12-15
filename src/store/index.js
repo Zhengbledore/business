@@ -7,6 +7,7 @@ import * as actions from './actions'
 import * as getters from './getters'
 import demo from './modules/demo'
 import loading from './modules/loading'
+import searchBox from './modules/search-box'
 
 Vue.use(Vuex)
 
@@ -17,6 +18,7 @@ export default new Vuex.Store({
   getters,
   modules: {
     demo,
-    loading
+    loading,
+    searchBox
   }
 })

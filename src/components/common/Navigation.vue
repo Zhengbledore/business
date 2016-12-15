@@ -25,7 +25,14 @@
 <script>
 //  import langSetting from '../../../config/lang/zh-cn'
 //  import { Navigation } from '../../../config/icon/icon'
+import muPaper from 'muse-ui/src/paper'
+import { bottomNav as muBottomNav, bottomNavItem as muBottomNavItem } from 'muse-ui/src/bottomNav'
   export default{
+    components: {
+      muPaper,
+      muBottomNav,
+      muBottomNavItem
+    },
     data () {
       return {
         bottomNav: 'home',

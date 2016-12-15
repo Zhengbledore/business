@@ -24,7 +24,8 @@
 
   .gridlist {
     width: 100%;
-    height: 500px;
+    /*height: 500px;*/
+    height: 100%;
     overflow-y: auto;
   }
   .mu-grid-tile img {
@@ -36,6 +37,7 @@
   }
   .box-footer {
     width: 100%;
+    height: 100px;
   }
 
   .box-footer-copyright {
@@ -56,6 +58,11 @@
   import morning from '../assets/images/morning.6e04e04.jpg'
   import vegetables from '../assets/images/vegetables.30f55d5.jpg'
   import water from '../assets/images/water-plant.97ca350.jpg'
+
+  /* import muse-ui component */
+  import { gridList as muGridList, gridTile as muGridTile } from 'muse-ui/src/gridList'
+  import muSubHeader from 'muse-ui/src/subHeader'
+  import muIconButton from 'muse-ui/src/iconButton'
   export default{
     name: 'home-page',
     data(){
@@ -131,7 +138,12 @@
         }]
       }
     },
-    components: {},
+    components: {
+      muGridList,
+      muGridTile,
+      muSubHeader,
+      muIconButton
+    },
     methods: {}
   }
 </script>

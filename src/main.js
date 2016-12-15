@@ -9,17 +9,20 @@ import axios from 'axios'
 Vue.prototype.$http = axios
 
 /* import muse-ui  */
-import MuseUI from 'muse-ui'
-import 'muse-ui/dist/muse-ui.css'
+// import MuseUI from 'muse-ui'
+// import 'muse-ui/dist/muse-ui.css'
+import 'muse-components/styles/base.less' // 加载基础的样式
 import 'muse-ui/dist/theme-carbon.css'
 import { sync } from 'vuex-router-sync'
+
+import '../node_modules/material-design-icons/iconfont/material-icons.css'
 
 // sync(store, router) // done.
 
 /* eslint-disable no-new */
 Vue.use(VueRouter)
 Vue.use(Vuex)
-Vue.use(MuseUI)
+// Vue.use(MuseUI)
 
 /*
  * Route

@@ -3,7 +3,7 @@
     <mu-appbar :title="headerTitle">
       <mu-icon-button icon="clear" slot="left" v-show="headerIcon" @click="closeSearchBox"/>
       <mu-text-field icon="search" class="appbar-search-field" slot="right" hintText="请输入搜索内容"
-        @change="handleChange" ref="textField"
+                     @change="handleChange" ref="textField" :value="searchTextFieldValue"
       />
       <mu-icon-menu icon="search" slot="right" :value="value">
       </mu-icon-menu>
@@ -52,7 +52,7 @@
   import muIconButton from 'muse-ui/src/iconButton'
   import muTextField from 'muse-ui/src/textField'
   import muIconMenu from 'muse-ui/src/iconMenu'
-  import { menuItem as muMenuItem } from 'muse-ui/src/menu'
+  import {menuItem as muMenuItem} from 'muse-ui/src/menu'
   export default{
     props: {
       headerTitle: {
@@ -66,7 +66,7 @@
     },
     data(){
       return {
-          value: '1'
+        value: '1'
       }
     },
     components: {
@@ -76,26 +76,27 @@
       muIconMenu,
       muMenuItem,
     },
+    mounted() {
+    },
     methods: {
       closeSearchBox() {
         this.$store.dispatch('closeSearchBox')
-        this.$refs.textField.inputValue = ''
       },
       handleChange(val) {
         const bar = {
           associationProductName: 'mac',
           associationOtherProducts: [
-            { name: 'mini', fullName: 'mac mini' },
-            { name: 'pro', fullName: 'mac pro' },
+            {name: 'mini', fullName: 'mac mini'},
+            {name: 'pro', fullName: 'mac pro'},
           ]
         }
 
-        if(val.length > 0){
+        if (val.length > 0) {
           this.$store.dispatch('goToSearch', {
             data: bar,
             type: 'show'
           })
-        }else {
+        } else {
           this.$store.dispatch('goToSearch', {
             data: bar,
             type: 'close'
@@ -119,12 +120,32 @@
     computed: {
       searchBoxShow() {
         return this.$store.getters.searchBoxShow
+      },
+      searchTextFieldValue() {
+        if(this.thisRouteName === 'search') {
+          return this.$store.getters.searchTextFieldValue
+        }
+        return ''
+      },
+      thisRouteName() {
+          return this.$store.state.route.name
+      },
+      thisRouteParams() {
+          return this.$store.state.route.params
       }
     },
     watch: {
       searchBoxShow(newVal) {
-        if(newVal === true){
-            this.setTextFieldFocus()
+        if (newVal === true) {
+          this.setTextFieldFocus()
+
+          if (this.thisRouteName === 'search' && this.thisRouteParams.query > 0) {
+            this.handleChange(this.$store.state.route.params.query)
+            // topBar's textField and searchItem's textField input val
+            this.$store.dispatch('setSearchTextFieldValue', this.thisRouteParams.query)
+          }
+        } else if (newVal === false) {
+          this.$refs.textField.inputValue = ''
         }
       }
     }

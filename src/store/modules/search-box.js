@@ -2,18 +2,20 @@
  * Created by root on 16-12-14.
  */
 import * as types from '../mutation-types'
-import searchRequest from '../../http/request-instance'
+// import searchRequest from '../../http/request-instance'
 
 // init state
 const state = {
   searchBoxShow: false,
-  searchResults: []
+  searchResults: [],
+  searchTextFieldValue: ''
 }
 
 // getters
 const getters = {
   searchBoxShow: state => state.searchBoxShow,
-  searchResults: state => state.searchResults
+  searchResults: state => state.searchResults,
+  searchTextFieldValue: state => state.searchTextFieldValue
 }
 
 // actions
@@ -38,6 +40,9 @@ const actions = {
     //
     // })
     commit(types.SET_SEARCH_RESULTS, inputVal)
+  },
+  setSearchTextFieldValue ({commit, state}, inputValue) {
+    commit(types.SET_SEARCH_TEXT_FIELD_VALUE, inputValue)
   }
 }
 
@@ -60,6 +65,9 @@ const mutations = {
     } else if(payload.type === 'close') {
       state.searchResults = []
     }
+  },
+  [types.SET_SEARCH_TEXT_FIELD_VALUE] (state, payload) {
+    state.searchTextFieldValue = payload
   }
 }
 

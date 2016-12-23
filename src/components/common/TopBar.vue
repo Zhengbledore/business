@@ -3,7 +3,7 @@
     <mu-appbar :title="headerTitle">
       <mu-icon-button icon="keyboard_arrow_left" slot="left" v-show="headerIcon"/>
       <mu-text-field icon="search" class="appbar-search-field" slot="right" hintText=""
-      @focus="testMyMehod"
+      @focus="changeSearchBoxShow"
       />
       <mu-icon-menu icon="more_vert" slot="right" :value="value" @change="handleChange">
         <mu-menu-item value="1" title="星期一"/>
@@ -22,6 +22,8 @@
   #top-bar {
     /*position: fixed;*/
     width: 100%;
+    position: fixed;
+    z-index: 100004;
   }
 </style>
 <script>
@@ -60,8 +62,7 @@
       handleChange (value) {
         this.value = value
       },
-      testMyMehod () {
-          console.log(312312)
+      changeSearchBoxShow () {
         this.$store.dispatch('changeSearchBoxShow')
       }
     }

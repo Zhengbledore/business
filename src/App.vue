@@ -11,6 +11,7 @@
   import TopBar from './components/common/TopBar.vue'
   import Container from './components/common/Container.vue'
   import Navigation from './components/common/Navigation.vue'
+  import { headerTitle as HeaderTitles } from '../config/lang/vue-router/zh-cn'
 
   export default {
     name: 'app',
@@ -18,6 +19,11 @@
       TopBar,
       Container,
       Navigation
+    },
+    data() {
+        return {
+          HeaderTitles
+        }
     },
     methods: {},
     mounted() {
@@ -34,10 +40,15 @@
 //        .catch(function (error) {
 //          console.log(error);
 //        })
+
     },
     computed: {
       headerTitle() {
-        return this.$store.state.route.name
+        let routerName = this.$store.state.route.name
+        if(routerName) {
+          return this.HeaderTitles[routerName].pageTitle
+        }
+        return '首页'
       },
       headerIcon() {
         if (this.$store.state.route.path === '/') {

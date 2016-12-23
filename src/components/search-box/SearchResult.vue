@@ -1,12 +1,5 @@
 <template>
   <div id="search_land_searchland" class="search-land">
-    <!--<ul class="association-normal">-->
-      <!--<li v-for="(item, index) in searchResults">-->
-        <!--<span class="association-product-name">{{ item.associationProductName }}</span>-->
-        <!--<span pingparam="1"-->
-              <!--class="association-product-btn" v-for="(otherItem, index) in item.associationOtherProducts">{{ otherItem.name }}</span>-->
-      <!--</li>-->
-    <!--</ul>-->
     <transition-group
       name="staggered-fade"
       tag="ul"
@@ -21,9 +14,11 @@
         v-bind:key="item.associationProductName"
         v-bind:data-index="index"
       >
-        <span class="association-product-name">{{ item.associationProductName }}</span>
+        <span class="association-product-name" @click="goToSearchPage(item.associationProductName)">{{ item.associationProductName }}</span>
         <span pingparam="1"
-              class="association-product-btn" v-for="(otherItem, index) in item.associationOtherProducts">{{ otherItem.name }}</span>
+              class="association-product-btn" v-for="(otherItem, index) in item.associationOtherProducts"
+              @click="goToSearchPage(otherItem.name)"
+        >{{ otherItem.name }}</span>
       </li>
     </transition-group>
   </div>
@@ -87,7 +82,7 @@
       }
     },
     mounted() {
-      console.log(this.searchResults)
+//      console.log(this.searchResults)
     },
     methods: {
       beforeEnter: function (el) {
@@ -113,6 +108,11 @@
             { complete: done }
           )
         }, delay)
+      },
+      goToSearchPage(query) {
+        this.$router.push({ name: 'search', params: { query: query }})
+        this.$store.dispatch('closeSearchBox')
+//        this.$refs.textField.inputValue = ''
       }
     }
   }

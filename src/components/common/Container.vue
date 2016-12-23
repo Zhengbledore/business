@@ -23,6 +23,7 @@
     /*position: fixed;*/
     overflow: hidden;
     /*height: 700px;*/
+    padding-top: 56px;
   }
 </style>
 <script>

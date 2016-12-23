@@ -19,74 +19,75 @@ const routes = [
   {
     path: '/',
     component: resolve => require(['../page/HomePage'], resolve),
-    name: '首页'
+    name: 'home'
   },
   {
     path: '/choose/login',
     component: resolve => require(['../page/Login'], resolve),
-    name: '登录'
+    name: 'login'
   },
   {
     path: '/company/:company_id',
     component: resolve => require(['../page/Company'], resolve),
-    name: '当前页决定'
+    name: 'company'
   },
   {
     path: '/company/:company_id/route/:route_id',
-    component: resolve => require(['../page/Route'], resolve)
+    component: resolve => require(['../page/Route'], resolve),
+    name: 'route'
   },
   {
     path: '/search',
     component: resolve => require(['../page/Search'], resolve),
-    name: '搜索'
+    name: 'search'
   },
   {
     path: '/user/center',
     component: resolve => require(['../page/UserCenter'], resolve),
     meta: {requiresAuth: true},
-    name: '用户中心'
+    name: 'userCenter'
   },
   {
     path: '/user/info',
     component: resolve => require(['../page/UserInfo'], resolve),
     meta: {requiresAuth: true},
-    name: '用户信息'
+    name: 'userInfo'
   },
   {
     path: '/user/setting',
     component: resolve => require(['../page/Setting'], resolve),
     meta: {requiresAuth: true},
-    name: '设置'
+    name: 'setting'
   },
   {
     path: '/order/:order_id',
     component: resolve => require(['../page/Order'], resolve),
     meta: {requiresAuth: true},
-    name: '订单详情'
+    name: 'order'
   },
   {
     path: '/order/list',
     component: resolve => require(['../page/Orders'], resolve),
     meta: {requiresAuth: true},
-    name: '订单列表'
+    name: 'orders'
   },
   {
     path: '/order/manager',
     component: resolve => require(['../page/OrderManager'], resolve),
     meta: {requiresAuth: true},
-    name: '订单管理'
+    name: 'orderManager'
   },
   {
     path: '/order/creating',
     component: resolve => require(['../page/OrderCreating'], resolve),
     meta: {requiresAuth: true},
-    name: '创建订单'
+    name: 'orderCreating'
   },
   {
     path: '/favorites',
     component: resolve => require(['../page/Favorites'], resolve),
     meta: {requiresAuth: true},
-    name: '我的收藏'
+    name: 'favorites'
   }
 ]
 

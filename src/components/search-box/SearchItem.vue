@@ -46,6 +46,9 @@
     -webkit-flex: 1;
     flex: 1;
   }
+  .mu-text-field-input {
+    color: #d3d6db;
+  }
 </style>
 <script>
   import muAppbar from 'muse-ui/src/appBar'

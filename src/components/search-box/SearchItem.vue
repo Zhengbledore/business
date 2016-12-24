@@ -2,7 +2,7 @@
   <div id="search-item">
     <mu-appbar :title="headerTitle">
       <mu-icon-button icon="clear" slot="left" v-show="headerIcon" @click="closeSearchBox"/>
-      <mu-text-field icon="search" class="appbar-search-field" slot="right" hintText="请输入搜索内容"
+      <mu-text-field icon="search" class="appbar-search-field" slot="right" :hintText="searchHintText"
                      @change="handleChange" ref="textField" :value="searchTextFieldValue"
       />
       <mu-icon-menu icon="search" slot="right" :value="value">
@@ -135,6 +135,15 @@
       },
       thisRouteParams() {
           return this.$store.state.route.params
+      },
+      searchHintText () {
+          if(this.routerName === 'routes') {
+              return '搜索店铺内商品内容'
+          }
+          return '请输入搜索内容'
+      },
+      routerName () {
+          return this.$store.state.route.name
       }
     },
     watch: {

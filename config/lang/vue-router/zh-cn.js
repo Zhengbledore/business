@@ -14,6 +14,9 @@ export const headerTitle = {
   route: {
     pageTitle: '当前页决定'
   },
+  routes: {
+    pageTitle: '当前页决定'
+  },
   search: {
     pageTitle: '搜索'
   },

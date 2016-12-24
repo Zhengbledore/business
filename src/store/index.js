@@ -8,6 +8,7 @@ import * as getters from './getters'
 import demo from './modules/demo'
 import loading from './modules/loading'
 import searchBox from './modules/search-box'
+import topBar from './modules/top-bar'
 
 Vue.use(Vuex)
 
@@ -19,6 +20,7 @@ export default new Vuex.Store({
   modules: {
     demo,
     loading,
-    searchBox
+    searchBox,
+    topBar
   }
 })

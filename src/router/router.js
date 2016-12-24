@@ -37,6 +37,11 @@ const routes = [
     name: 'route'
   },
   {
+    path: '/company/:company_id/route',
+    component: resolve => require(['../page/Routes'], resolve),
+    name: 'routes'
+  },
+  {
     path: '/search',
     component: resolve => require(['../page/Search'], resolve),
     name: 'search'

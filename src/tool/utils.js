@@ -15,3 +15,5 @@ export const getDOM = function(dom) {
   }
   return dom
 }
+
+/*  */

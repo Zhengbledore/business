@@ -9,6 +9,7 @@ import demo from './modules/demo'
 import loading from './modules/loading'
 import searchBox from './modules/search-box'
 import topBar from './modules/top-bar'
+import orderPreparingData from './modules/order-preparing-data'
 
 Vue.use(Vuex)
 
@@ -21,6 +22,7 @@ export default new Vuex.Store({
     demo,
     loading,
     searchBox,
-    topBar
+    topBar,
+    orderPreparingData
   }
 })

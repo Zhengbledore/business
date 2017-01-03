@@ -10,6 +10,7 @@ import loading from './modules/loading'
 import searchBox from './modules/search-box'
 import topBar from './modules/top-bar'
 import orderPreparingData from './modules/order-preparing-data'
+import factory from './modules/factory'
 
 Vue.use(Vuex)
 
@@ -23,6 +24,7 @@ export default new Vuex.Store({
     loading,
     searchBox,
     topBar,
-    orderPreparingData
+    orderPreparingData,
+    factory
   }
 })

@@ -11,7 +11,7 @@
       </div>
       <div class="box-user-content">
         <mu-list>
-          <mu-list-item title="我的订单" describeText="点击进入订单中心" @click="goToNextPage('orderManager', 'all')">
+          <mu-list-item title="我的订单" describeText="点击进入订单中心" @click="goToNextPage('ordersManager', 'all')">
             <mu-avatar icon="subject" backgroundColor="orange400" slot="leftAvatar"/>
             <mu-icon value="keyboard_arrow_right" slot="right"/>
           </mu-list-item>
@@ -23,7 +23,7 @@
               :label="item.label"
               class="box-flat-button"
               labelPosition="before"
-              @click="goToNextPage('orderManager', item.value)"
+              @click="goToNextPage('ordersManager', item.value)"
             />
           </mu-flexbox-item>
         </mu-flexbox>
@@ -128,7 +128,7 @@
         switch (page) {
           case 'userInfo':
             break
-          case 'orderManager':
+          case 'ordersManager':
             path.params = {
               type: params[0]
             }

@@ -70,17 +70,17 @@ const routes = [
     meta: {requiresAuth: true},
     name: 'order'
   },
+  // {
+  //   path: '/order/list',
+  //   component: resolve => require(['../page/Orders'], resolve),
+  //   meta: {requiresAuth: true},
+  //   name: 'orders'
+  // },
   {
-    path: '/order/list',
-    component: resolve => require(['../page/Orders'], resolve),
-    meta: {requiresAuth: true},
-    name: 'orders'
-  },
-  {
-    path: '/order/manager',
+    path: '/orders/manager',
     component: resolve => require(['../page/OrderManager'], resolve),
     meta: {requiresAuth: true},
-    name: 'orderManager'
+    name: 'ordersManager'
   },
   {
     path: '/order/creating',

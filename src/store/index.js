@@ -11,6 +11,7 @@ import searchBox from './modules/search-box'
 import topBar from './modules/top-bar'
 import orderPreparingData from './modules/order-preparing-data'
 import factory from './modules/factory'
+import orders from './modules/orders'
 
 Vue.use(Vuex)
 
@@ -25,6 +26,7 @@ export default new Vuex.Store({
     searchBox,
     topBar,
     orderPreparingData,
-    factory
+    factory,
+    orders
   }
 })

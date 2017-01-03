@@ -33,7 +33,6 @@
       }
     },
     mounted() {
-        console.log(this.show)
     }
   }
 </script>

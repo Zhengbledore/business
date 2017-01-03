@@ -35,7 +35,7 @@ export const headerTitle = {
   orders: {
     pageTitle: '订单列表'
   },
-  orderManager: {
+  ordersManager: {
     pageTitle: '订单管理'
   },
   orderCreating: {

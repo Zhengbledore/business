@@ -4,3 +4,4 @@
 export const baseUrl = 'api.business.dev'
 export const searchUrl = '/search'
 export const factoryShipment = '/factory/shipments'
+export const orders = '/orders'

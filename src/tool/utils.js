@@ -16,4 +16,8 @@ export const getDOM = function(dom) {
   return dom
 }
 
+export const isArray = (object) => {
+  return Array.isArray(object)
+}
+
 /*  */

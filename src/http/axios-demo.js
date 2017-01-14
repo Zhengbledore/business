@@ -1,9 +1,6 @@
 /**
- * Created by root on 16-12-15.
+ * Created by root on 17-1-6.
  */
-import axios from 'axios'
-import * as urls from './url'
-
 // let demo =  axios({
 //   // `url` is the server URL that will be used for the request
 //   url: '/user',
@@ -143,18 +140,3 @@ import * as urls from './url'
 //     })
 //   }
 // })
-
-let searchRequest = axios({
-  url: urls.searchUrl,
-  method: 'post',
-  baseURL: urls.baseUrl,
-  headers: {
-    'X-Requested-With': 'XMLHttpRequest'
-  },
-  params: {
-    inputVal: 12345
-  },
-  timeout: 1500,
-})
-
-export default searchRequest

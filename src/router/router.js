@@ -65,13 +65,13 @@ const routes = [
     name: 'setting'
   },
   {
-    path: '/order/:order_id',
+    path: '/getOrder/:order_id',
     component: resolve => require(['../page/Order'], resolve),
     meta: {requiresAuth: true},
-    name: 'order'
+    name: 'getOrder'
   },
   // {
-  //   path: '/order/list',
+  //   path: '/getOrder/list',
   //   component: resolve => require(['../page/Orders'], resolve),
   //   meta: {requiresAuth: true},
   //   name: 'orders'
@@ -83,7 +83,7 @@ const routes = [
     name: 'ordersManager'
   },
   {
-    path: '/order/creating',
+    path: '/order/:ware_id/creating',
     component: resolve => require(['../page/OrderCreating'], resolve),
     meta: {requiresAuth: true},
     name: 'orderCreating'
@@ -93,6 +93,18 @@ const routes = [
     component: resolve => require(['../page/Favorites'], resolve),
     meta: {requiresAuth: true},
     name: 'favorites'
+  },
+  {
+    path: '/address/:address_id',
+    component: resolve => require(['../page/Address'], resolve),
+    meta: {requiresAuth: true},
+    name: 'address'
+  },
+  {
+    path: '/addresses',
+    component: resolve => require(['../page/Addresses'], resolve),
+    meta: {requiresAuth: true},
+    name: 'addresses'
   }
 ]
 

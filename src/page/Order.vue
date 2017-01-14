@@ -317,7 +317,7 @@
             'X-Requested-With': 'XMLHttpRequest'
           },
           params: {
-            order_id: this.order.orderId
+            order_id: this.getOrder.orderId
           },
           timeout: 1500,
         }).then((response) => {
@@ -344,7 +344,7 @@
             'X-Requested-With': 'XMLHttpRequest'
           },
           params: {
-            order_id: this.order.orderId
+            order_id: this.getOrder.orderId
           },
           timeout: 1500,
         }).then((response) => {
@@ -361,7 +361,7 @@
       },
       getOrder(orderId) {
         this.axios({
-          url: urls.order,
+          url: urls.getOrder,
           method: 'post',
           baseURL: urls.baseUrl,
           headers: {
@@ -385,8 +385,8 @@
         this.confirmShow = false
         this.sendShow = false
         this.completeShow = false
-        if(this.order.orderType){
-          this[this.order.orderType + 'Show'] = true
+        if(this.getOrder.orderType){
+          this[this.getOrder.orderType + 'Show'] = true
         }
       } else {
         /* error operation */

@@ -2,7 +2,6 @@
  * Created by root on 16-12-14.
  */
 import * as types from '../mutation-types'
-// import searchRequest from '../../http/request-instance'
 
 // init state
 const state = {

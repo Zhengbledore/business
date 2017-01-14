@@ -85,7 +85,7 @@
         </div>
       </div>
       <div class="box-route-company-customer-service"></div>
-      <mu-popup position="bottom" popupClass="demo-popup-bottom" :open="bottomPopup" @close="close('bottom')">
+      <mu-popup position="bottom" popupClass="box-popup-bottom" :open="bottomPopup" @close="close('bottom')">
         <mu-app-bar title="货物情况">
           <mu-flat-button slot="right" label="关闭" color="white" @click="close('bottom')"/>
         </mu-app-bar>
@@ -101,7 +101,7 @@
           </div>
         </mu-content-block>
       </mu-popup>
-      <mu-popup position="bottom" popupClass="demo-popup-bottom" :open="cityPopup" @close="close('city')">
+      <mu-popup position="bottom" popupClass="box-popup-bottom" :open="cityPopup" @close="close('city')">
         <mu-app-bar title="城市">
           <mu-flat-button slot="right" label="关闭" color="white" @click="close('city')"/>
         </mu-app-bar>
@@ -271,7 +271,7 @@
     padding: 24px;
   }
 
-  .demo-popup-bottom {
+  .box-popup-bottom {
     width: 100%;
     /*max-width: 375px;*/
   }

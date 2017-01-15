@@ -25,6 +25,9 @@ export const SET_ORDER_LOGISTICAL = 'SET_ORDER_LOGISTICAL'
 
 export const SET_ORDER = 'SET_ORDER'
 
+/* addresses */
+export const SET_TARGET_ADDRESSES = 'SET_TARGET_ADDRESSES'
+
 /* factory */
 export const SET_SHIPMENT_DATA_FOR_FACTORY = 'SET_SHIPMENT_DATA_FOR_FACTORY'
 

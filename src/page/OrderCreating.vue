@@ -10,7 +10,7 @@
           <mu-divider/>
           <mu-list>
             <mu-list-item title="驴得水 188****9898" describeText="广东揭阳市普宁市城区广东省普宁市环城北路普宁广场对面光德楼前一栋932科技"
-                          @click="goToNextPage('chooseAddress', orderPreparingData.wareId)">
+                          @click="goToNextPage('addresses', orderPreparingData.wareId)">
               <!--<mu-avatar icon="room" backgroundColor="red500" slot="leftAvatar"/>-->
               <mu-icon value="keyboard_arrow_right" slot="right"/>
             </mu-list-item>

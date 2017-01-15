@@ -14,6 +14,7 @@ import factory from './modules/factory'
 import orders from './modules/orders'
 import dialog from './modules/dialog'
 import order from './modules/order'
+import addresses from './modules/addresses'
 
 Vue.use(Vuex)
 
@@ -32,5 +33,6 @@ export default new Vuex.Store({
     orders,
     dialog,
     order,
+    addresses,
   }
 })

@@ -21,6 +21,9 @@ const getOrderInsurance = '/getOrder/insurance/get'
 const getDistribute = '/distribute/get'
 const getOrderLogistical = '/order/logistical/get'
 
+/* address */
+const getTargetAddresses = 'addresses/get'
+
 export {
   baseUrl,
   searchUrl,
@@ -38,4 +41,5 @@ export {
   getOrderInsurance,
   getDistribute,
   getOrderLogistical,
+  getTargetAddresses,
 }

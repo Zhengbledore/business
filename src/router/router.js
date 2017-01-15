@@ -101,7 +101,7 @@ const routes = [
     name: 'address'
   },
   {
-    path: '/addresses',
+    path: '/addresses/:ware_id',
     component: resolve => require(['../page/Addresses'], resolve),
     meta: {requiresAuth: true},
     name: 'addresses'

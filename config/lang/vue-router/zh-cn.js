@@ -43,6 +43,9 @@ export const headerTitle = {
   },
   favorites: {
     pageTitle: '我的收藏'
+  },
+  addresses: {
+    pageTitle: '收货地址'
   }
 }
 

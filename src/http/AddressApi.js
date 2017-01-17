@@ -12,7 +12,7 @@ class AddressApi {
     return tokenWithRequest()
   }
 
-  getAddresses(params) {
+  getTargetAddresses(params) {
     return this.request.post(params.api, {}, {
 
     })

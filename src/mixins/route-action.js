@@ -31,6 +31,9 @@ let routeActionMixin = {
       }
       this.$router.push(path)
     },
+    goToLastPage() {
+      history.go(-1)
+    }
   }
 }
 

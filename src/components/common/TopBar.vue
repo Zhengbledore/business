@@ -1,10 +1,11 @@
 <template>
   <div id="top-bar">
-    <mu-appbar :title="headerTitle">
-      <mu-icon-button icon="keyboard_arrow_left" slot="left" v-show="headerIcon"/>
+    <mu-appbar :zDepth="0" :title="headerTitle">
+      <mu-icon-button icon="keyboard_arrow_left" slot="left" v-show="headerIcon" @click="goToLastPage" />
       <mu-text-field icon="search" class="appbar-search-field" slot="right" hintText=""
-                     @focus="changeSearchBoxShow"
+                     @focus="changeSearchBoxShow" v-show="searchShow"
       />
+      <div style="text-align:center">{{ headerTitle }} </div>
       <mu-icon-menu :icon="iconOfMenu" slot="right" :value="iconMenuValue" @change="handleChange">
         <mu-menu-item :value="item.value" :title="item.title" v-for="(item, index) in iconMenuItem"/>
       </mu-icon-menu>
@@ -21,13 +22,15 @@
   }
 </style>
 <script>
-  //  import muAppbar from 'muse-components/appBar'
   import muAppbar from 'muse-ui/src/appBar'
   import muIconButton from 'muse-ui/src/iconButton'
   import muTextField from 'muse-ui/src/textField'
   import muIconMenu from 'muse-ui/src/iconMenu'
   import {menuItem as muMenuItem} from 'muse-ui/src/menu'
   import searchBox from '../search-box/SearchBox.vue'
+
+  /* import mixin */
+  import routeAction from '../../mixins/route-action'
   export default{
     props: {
       headerTitle: {
@@ -35,6 +38,10 @@
         default: '首页'
       },
       headerIcon: {
+        type: Boolean,
+        default: false
+      },
+      searchShow: {
         type: Boolean,
         default: false
       }
@@ -111,6 +118,7 @@
             this.setIconMenuDataToVuex(homePageIconMenu)
           }
         }
-    }
+    },
+    mixins: [routeAction]
   }
 </script>

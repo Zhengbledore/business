@@ -110,22 +110,6 @@
           author: 'ruolin',
           link: 'search'
         }, {
-          image: hats,
-          title: 'Hats',
-          author: 'kakali',
-          link: 'search'
-        }, {
-          image: honey,
-          title: 'Honey',
-          author: 'yuyang',
-          link: 'search'
-        }, {
-          image: morning,
-          title: '类型二',
-          author: 'mokayi',
-          featured: true,
-          link: 'search'
-        }, {
           image: vegetables,
           title: 'Vegetables',
           author: 'NUyyyyyyy',

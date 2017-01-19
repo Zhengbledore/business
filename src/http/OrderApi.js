@@ -14,9 +14,21 @@ class OrderApi {
 
   getOrder(params) {
     return this.request.post(params.api, {}, {
-       // headers: {
-       //   'content-type': 'application/vnd.myapp.type+json'
-       // }
+      data: {
+        order_id: params.orderId,
+      }
+    })
+  }
+
+  getOrders(params) {
+    return this.request.post(params.api, {}, {
+      data: {
+        type: params.type,
+        top_id: params.topId,
+        last_id: params.lastId,
+        page: params.page,
+        limit: params.limit,
+      }
     })
   }
 
@@ -34,7 +46,10 @@ class OrderApi {
 
   getOrderAttention(params) {
     return this.request.post(params.api, {}, {
-
+      data: {
+        company_id: params.companyId,
+        route_id: params.route_id,
+      }
     })
   }
 
@@ -46,13 +61,19 @@ class OrderApi {
 
   getDistribute(params) {
     return this.request.post(params.api, {}, {
-
+      data: {
+        company_id: params.companyId,
+        route_id: params.route_id,
+      }
     })
   }
 
   getOrderLogistical(params) {
     return this.request.post(params.api, {}, {
-
+      data: {
+        company_id: params.companyId,
+        route_id: params.route_id,
+      }
     })
   }
 }

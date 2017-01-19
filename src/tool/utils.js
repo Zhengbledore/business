@@ -20,4 +20,13 @@ export const isArray = (object) => {
   return Array.isArray(object)
 }
 
-/*  */
+/* check auth */
+let user = localStorage.getItem('user')
+export const loggedIn = () => {
+    if(user){
+      if(user.isLogin) return true
+      return false
+    }
+    return false
+}
+

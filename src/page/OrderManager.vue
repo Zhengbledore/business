@@ -15,7 +15,7 @@
             <template v-for="item in list">
               <!--<mu-list-item :title="item"/>-->
               <div style="min-height: 120px">
-                <router-link :to="{ name: 'order', params: { order_id: 123 }}">
+                <router-link :to="{ name: 'getOrder', params: { order_id: 123 }}">
                   <div class="box-item">
                     <div class="box-item-summary">
                           <span class="" style="display: table; width: 100%;">
@@ -76,7 +76,7 @@
     -webkit-overflow-scrolling: touch;
     border: 1px solid #d9d9d9;
     position: relative;
-    top: 40px;
+    /*top: 40px;*/
     padding-bottom: 56px;
   }
 

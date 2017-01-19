@@ -36,3 +36,6 @@ export const SET_ORDERS_FOR_ORDERS_MANAGER = 'SET_ORDERS_FOR_ORDERS_MANAGER'
 
 /* dialog */
 export const SET_GENERAL_DIALOG = 'SET_GENERAL_DIALOG'
+
+/* login */
+export const SET_USER_LOGIN = 'SET_USER_LOGIN'

@@ -8,6 +8,9 @@ import store from './store'
 import axios from 'axios'
 Vue.prototype.$http = axios
 
+/* import utils */
+import { loggedIn } from './tool/utils'
+
 /* import muse-ui  */
 // import MuseUI from 'muse-ui'
 // import 'muse-ui/dist/muse-ui.css'
@@ -43,7 +46,17 @@ let router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   // ...
-  if (to.matched.some(record => record.meta.requiresName)) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+
+    // if (!loggedIn()) {
+    //   next({
+    //     path: '/choose/login',
+    //     query: { redirect: to.fullPath }
+    //   })
+    // } else {
+    //   next()
+    // }
+
     next()
   }else{
     next()

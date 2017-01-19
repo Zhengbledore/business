@@ -33,7 +33,6 @@
       headerTitle() {
         let routerName = this.$store.state.route.name
         if(routerName) {
-            console.log(this.HeaderTitles[routerName].pageTitle)
           return this.HeaderTitles[routerName].pageTitle
         }
         return '首页'

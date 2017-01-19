@@ -19,31 +19,37 @@ const routes = [
   {
     path: '/',
     component: resolve => require(['../page/HomePage'], resolve),
+    meta: {requiresAuth: false},
     name: 'home'
   },
   {
     path: '/choose/login',
     component: resolve => require(['../page/Login'], resolve),
+    meta: {requiresAuth: false},
     name: 'login'
   },
   {
     path: '/company/:company_id',
     component: resolve => require(['../page/Company'], resolve),
+    meta: {requiresAuth: false},
     name: 'company'
   },
   {
     path: '/company/:company_id/route/:route_id',
     component: resolve => require(['../page/Route'], resolve),
+    meta: {requiresAuth: false},
     name: 'route'
   },
   {
     path: '/company/:company_id/route',
     component: resolve => require(['../page/Routes'], resolve),
+    meta: {requiresAuth: false},
     name: 'routes'
   },
   {
     path: '/search',
     component: resolve => require(['../page/Search'], resolve),
+    meta: {requiresAuth: false},
     name: 'search'
   },
   {
